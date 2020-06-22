@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    {% load static %}
+    <html lang="en">
+    <head>
+    <title>번호판 인식기</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'image/car.png' %}" />
+</head>
+
+</head>
+<body>
+
+<body>
+    <div class="header">
+       <div class="logo">
+            <img src="{% static 'image/logo.png' %}" />
+        </div>
+        <h1>자동차 번호판 인식기</h1>
+    </div>
+     <div id="container">
+         <div class="wrapper">
+            <form class="box" id="image_form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="drop_file_zone" ondragleave="dragLeave(event)" ondrop="drop(event)" ondragover="dragOver(event)">
+                    <p class="guide">drag it here</p>
+                    {{form.as_p}}
+                </div>
+            </form>
+
+            <div class="file_info">
+                <label for="file" onchange="changeImage(event)">
+                    <label for="file">
+                      <div class="filelabel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                            <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path>
+                        </svg>
+                        <span>이미지 업로드</span>
+                      </div>
+                    </label>
+                </label>
+                <p class="fileName">선택된 파일 없음</p>
+                <button class="execute" onclick="object_detection()">실행</button>
+            </div> 
+        </div>
+       
+        
+        {% include "recognition/result.html" %}
+
+        <div id="top" style="position:fixed; bottom:20px; right:20px;">
+            <a href="#">TOP</a>
+        </div>
+    </div>
+</body>

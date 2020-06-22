@@ -1,0 +1,282 @@
+input,span,p,h2,h1{
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+body{
+    text-align: center;
+}
+
+.header{
+    width:100%;
+    min-height: 100px;
+    margin: 0;
+    padding:0;
+    background-image: linear-gradient(194deg, rgba(231, 231, 231, 0.03) 0%, rgba(231, 231, 231, 0.03) 17%,rgba(29, 29, 29, 0.03) 17%, rgba(29, 29, 29, 0.03) 19%,rgba(234, 234, 234, 0.03) 19%, rgba(234, 234, 234, 0.03) 37%,rgba(240, 240, 240, 0.03) 37%, rgba(240, 240, 240, 0.03) 79%,rgba(91, 91, 91, 0.03) 79%, rgba(91, 91, 91, 0.03) 84%,rgba(73, 73, 73, 0.03) 84%, rgba(73, 73, 73, 0.03) 98%,rgba(21, 21, 21, 0.03) 98%, rgba(21, 21, 21, 0.03) 100%),linear-gradient(59deg, rgba(160, 160, 160, 0.03) 0%, rgba(160, 160, 160, 0.03) 3%,rgba(224, 224, 224, 0.03) 3%, rgba(224, 224, 224, 0.03) 6%,rgba(137, 137, 137, 0.03) 6%, rgba(137, 137, 137, 0.03) 23%,rgba(226, 226, 226, 0.03) 23%, rgba(226, 226, 226, 0.03) 30%,rgba(96, 96, 96, 0.03) 30%, rgba(96, 96, 96, 0.03) 44%,rgba(210, 210, 210, 0.03) 44%, rgba(210, 210, 210, 0.03) 74%,rgba(61, 61, 61, 0.03) 74%, rgba(61, 61, 61, 0.03) 100%),linear-gradient(22deg, rgba(201, 201, 201, 0.03) 0%, rgba(201, 201, 201, 0.03) 5%,rgba(89, 89, 89, 0.03) 5%, rgba(89, 89, 89, 0.03) 6%,rgba(100, 100, 100, 0.03) 6%, rgba(100, 100, 100, 0.03) 18%,rgba(172, 172, 172, 0.03) 18%, rgba(172, 172, 172, 0.03) 52%,rgba(186,213,244, 0.14901960784313725) 52%, rgba(186,213,244, 0.14901960784313725) 85%,rgba(240, 240, 240, 0.03) 85%, rgba(240, 240, 240, 0.03) 89%,rgba(186,213,244, 0.14901960784313725) 89%, rgba(186,213,244, 0.14901960784313725) 100%),linear-gradient(283deg, rgba(186,213,244, 0.14901960784313725) 0%, rgba(186,213,244, 0.14901960784313725) 10%,rgba(194,194,194, 0.03137254901960784) 10%, rgba(194,194,194, 0.03137254901960784) 34%,rgba(186,213,244, 0.14901960784313725) 34%, rgba(186,213,244, 0.14901960784313725) 36%,rgba(177, 177, 177, 0.03) 36%, rgba(177, 177, 177, 0.03) 46%,rgba(180, 180, 180, 0.03) 46%, rgba(180, 180, 180, 0.03) 59%,rgba(89, 89, 89, 0.03) 59%, rgba(89, 89, 89, 0.03) 80%,rgba(217, 217, 217, 0.03) 80%, rgba(217, 217, 217, 0.03) 100%),linear-gradient(342deg, rgba(171, 171, 171, 0.03) 0%, rgba(171, 171, 171, 0.03) 22%,rgba(238, 238, 238, 0.03) 22%, rgba(238, 238, 238, 0.03) 37%,rgba(186, 186, 186, 0.03) 37%, rgba(186, 186, 186, 0.03) 65%,rgba(80, 80, 80, 0.03) 65%, rgba(80, 80, 80, 0.03) 68%,rgba(49, 49, 49, 0.03) 68%, rgba(49, 49, 49, 0.03) 71%,rgba(137, 137, 137, 0.03) 71%, rgba(137, 137, 137, 0.03) 88%,rgba(224, 224, 224, 0.03) 88%, rgba(224, 224, 224, 0.03) 100%),linear-gradient(90deg, rgb(216,240,255),rgb(208,229,241));
+    text-align: center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+.logo{
+    width: auto;
+    display: none;
+    margin: 0 10px;
+    display: inline-block;
+    float: left;
+}
+
+.logo img{
+    width:100px;
+    height:100px;
+}
+.header h1{
+  text-align: center;
+  margin: 0 auto;
+  float: left;
+  padding: 30px 20px;
+}
+.wrapper{
+    display: block;
+    width:100%;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.is-dragover {
+    background-color: grey !important;
+}
+
+.drop_file_zone {
+    background-color: #eee;
+    width: 70%;
+    height: 250px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.guide{
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-size: 25px;
+    transform: translate(-50%,-50%);
+}
+
+.box_file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.filelabel, .execute, .save, .select, .btn{
+    color: #fff;
+    background-color: #8DC3E2;
+    font-size: 30px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.filelabel:hover, .execute:hover, .save:hover, .select:hover , .btn:hover{
+    background-color: #73B6DC;
+}
+.filelabel svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.execute, .save{
+    margin: 35px auto 0 auto;
+    display:block;
+    border: 0;
+    outline: 0;
+}
+.result{
+  display: block;
+  width:100%;
+  text-align: center;
+  background-color: #DDEDF6;
+  padding-bottom: 30px;
+}
+.result h2{
+  padding-top: 30px;
+}
+.imgs{
+    margin: 20px auto;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+}
+.resultImg {
+    background-color: #eee;
+    width: 100%;
+    height: 70px;
+    display:inline-block;
+    position: relative;
+    float: left;
+    margin: auto;
+}
+.text{
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    text-align:center
+}
+.alt{
+    width: 100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-size: 15px;
+    transform: translate(-50%,-50%);
+}
+
+.file_info{
+    display: inline-block;
+}
+.fileName{
+    text-align: center;
+    font-size: 20px;
+}
+
+#top a{
+     font-size: 15px;
+     background-color: white;
+     text-decoration: none;
+     padding: 2px 5px;
+     border-radius: 5px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: none;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.save:disabled,
+.select:disabled{
+      background-color: #cccccc;
+}
+
+.imgSelect{
+    margin: 10px;
+}
+
+
+@media screen and (min-width: 1000px) {
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .guide {
+      visibility: visible;
+    }
+    .drop_file_zone {
+        width: 350px;
+        height: 300px;
+        margin: 20px 0;
+        display:inline-block;
+        margin-right: 10px;
+    }
+
+    .container{
+        margin: 10px atuo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container::after{
+        display: block;
+        content:'';
+        clear: both;
+    }
+    .result h2{
+        text-align:left;
+        margin-left:15%;
+    }
+
+    .imgs{
+        margin-left:0;
+        margin-right: 20px;
+    }
+
+    .save{
+        margin: 0 25px;
+        padding: 25px 50px;
+    }
+
+    .resultImg{
+        margin: auto 25px;
+    }
+   .text{
+        margin: 15px;
+   }
+   #top{
+     display: none;
+   }
+}
+@media screen and (max-width: 550px) {
+    .logo{
+      display: none;
+    }
+    .header h1{
+      font-size: 33px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .wrapper{
+      padding-top: 120px;
+    }
+    .guide {
+        visibility: hidden;
+    }
+    .inputfile + label{
+      padding: 5px 10px;
+    }
+}
