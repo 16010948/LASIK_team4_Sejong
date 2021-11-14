@@ -7,7 +7,7 @@ class CarForm(forms.ModelForm):
         model = Car
         fields = ['car_img']
         widgets= {
-            'car_img' : forms.FileInput(attrs={'class':'box_file','id':'file'}),
+            'car_img' : forms.FileInput(attrs={'class':'main-section__form__input','id':'file'}),
         }
         labels = {
             'car_img' : '',

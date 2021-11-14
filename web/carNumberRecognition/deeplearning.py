@@ -22,12 +22,12 @@ tf.logging.set_verbosity(tf.logging.ERROR)
 
 #Oject_Detection
 def Object_Detection():
-    options = {'model' : 'C:/project/Object_Detection/cfg/lp_detect.cfg', 
-                'backup' : 'C:/project/Object_Detection/ckpt',
+    options = {'model' : '../Object_Detection/cfg/lp_detect.cfg', 
+                'backup' : 'G:/LASIK/LASIK_team4_Sejong/Object_Detection/ckpt',
                 'load' : -1,
                 'threshold' : 0.6,
                 'gpu' : 0.5,
-                'labels' : 'C:/project/Object_Detection/labels.txt',
+                'labels' : '../labels.txt',
                 'train' : False,
               }
 
@@ -37,12 +37,12 @@ def Object_Detection():
 #Recognition
 
 def Recognition():
-    options = {'model' : 'C:/project/Recognition/cfg/rec.cfg', 
-                'backup' : 'C:/project/Recognition/ckpt',
+    options = {'model' : '../Recognition/cfg/rec.cfg', 
+                'backup' : '../Recognition/ckpt',
                 'load' : -1,
                 'threshold' : 0.1,
                 'gpu' : 0.5,
-                'labels' : 'C:/project/Recognition/labels.txt',
+                'labels' : '../labels.txt',
                 'train' : False,
               }
 
@@ -94,7 +94,7 @@ def exOD(tfnet,inputimg):
 
 def exSR(ODFile):
     
-    model = tf.keras.models.load_model("C:/project/Super_Resolution/model2_FCN_FSRCNN.h5")
+    model = tf.keras.models.load_model("../Super_Resolution/model2_FCN_FSRCNN.h5")
     print(model.summary())
     imgLR = []
     print(ODFile)
@@ -105,14 +105,14 @@ def exSR(ODFile):
     imgLR = np.asarray(imgLR)
     SRresult = (model.predict(imgLR)[0])
 
-    cv2.imwrite('C:/project/web/media/SR/SR.jpg', SRresult)
+    cv2.imwrite('../web/media/SR/SR.jpg', SRresult)
 
     SR_img_url = 'media/SR/SR.jpg'
     
     return SR_img_url
 
 def exRec(tfnet2):
-    img = cv2.imread('C:/project/web/media/SR/SR.jpg', cv2.IMREAD_COLOR)
+    img = cv2.imread('../web/media/SR/SR.jpg', cv2.IMREAD_COLOR)
     img1= img
 
     #BGR 사진을 RGB 사진으로 변환
@@ -181,7 +181,7 @@ def exRec(tfnet2):
         resultimg = cv2.rectangle(resultimg, t1, br, (255, 255, 0), 1)
         resultimg = cv2.putText(resultimg, label, (t1[0],br[1]), cv2.FONT_HERSHEY_SIMPLEX, 1*(imgsh[1]/300), (255, 255, 0), 1)
     
-    cv2.imwrite('C:/project/web/media/Rec/Rec.jpg', resultimg)
+    cv2.imwrite('media/Rec/Rec.jpg', resultimg)
     Rec_img_url = 'media/Rec/Rec.jpg'
     
     text = []

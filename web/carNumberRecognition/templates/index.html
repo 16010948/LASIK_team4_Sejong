@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+  <head>
+    <title>번호판 인식기</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'image/car.png' %}" />
+  </head>
+
+  <body>
+    <header class="main__header">
+    <div class="main__header__logo">
+        <img class="main__header__logo__image" src="{% static 'image/logo.png' %}" />
+    </div>
+    <h1 class="main__header__title">자동차 번호판 인식기</h1>
+    </header>
+    <section class="main-section">
+    {% include "modal.html" %}
+    <div class="main-section__user-input">
+        <form
+        class="main-section__user-input__form"
+        id="image_form"
+        method="post"
+        enctype="multipart/form-data"
+        >
+        {% csrf_token %}
+        <div class="main-section__user-input__form__drop-zone">
+            <p class="main-section__user-input__form__drop-zone__guide">
+            drag it here
+            </p>
+            {{form.as_p}}
+        </div>
+        </form>
+
+        <div class="main-section__user-input__info">
+        <label for="file" id="file-label" class="btn">
+            <div class="main-section__user-input__info__label">
+            <svg
+                class=".main-section__user-input__info__label__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="17"
+                viewBox="0 0 20 17"
+            >
+                <path
+                d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"
+                ></path>
+            </svg>
+            <span>이미지 업로드</span>
+            </div>
+        </label>
+        <p class="main-section__user-input__info__file-name">선택된 파일 없음</p>
+        <button class="main-section__user-input__info__execute btn">실행</button>
+        </div>
+    </div>
+
+    {% include "result.html" %}
+
+    <div id="top" style="position: fixed; bottom: 20px; right: 20px">
+        <a href="#">TOP</a>
+    </div>
+    </section>
+    <script src="{% static 'js/script.js' %}"></script>
+      <script src="{% static 'js/objectDetection.js' %}"></script>
+      <script src="{% static 'js/superResolution.js' %}"></script>
+      <script src="{% static 'js/recognotion.js' %}"></script>
+  </body>
+</html>

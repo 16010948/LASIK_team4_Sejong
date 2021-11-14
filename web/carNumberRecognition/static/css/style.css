@@ -1,79 +1,102 @@
 input,span,p,h2,h1{
     font-family: 'Nanum Gothic Coding', monospace;
 }
-body{
-    text-align: center;
-}
 
-.header{
-    width:100%;
-    min-height: 100px;
+.main__header{
+    width: 100%;
+    min-height: 7vh;
     margin: 0;
-    padding:0;
+    padding: 0;
     background-image: linear-gradient(194deg, rgba(231, 231, 231, 0.03) 0%, rgba(231, 231, 231, 0.03) 17%,rgba(29, 29, 29, 0.03) 17%, rgba(29, 29, 29, 0.03) 19%,rgba(234, 234, 234, 0.03) 19%, rgba(234, 234, 234, 0.03) 37%,rgba(240, 240, 240, 0.03) 37%, rgba(240, 240, 240, 0.03) 79%,rgba(91, 91, 91, 0.03) 79%, rgba(91, 91, 91, 0.03) 84%,rgba(73, 73, 73, 0.03) 84%, rgba(73, 73, 73, 0.03) 98%,rgba(21, 21, 21, 0.03) 98%, rgba(21, 21, 21, 0.03) 100%),linear-gradient(59deg, rgba(160, 160, 160, 0.03) 0%, rgba(160, 160, 160, 0.03) 3%,rgba(224, 224, 224, 0.03) 3%, rgba(224, 224, 224, 0.03) 6%,rgba(137, 137, 137, 0.03) 6%, rgba(137, 137, 137, 0.03) 23%,rgba(226, 226, 226, 0.03) 23%, rgba(226, 226, 226, 0.03) 30%,rgba(96, 96, 96, 0.03) 30%, rgba(96, 96, 96, 0.03) 44%,rgba(210, 210, 210, 0.03) 44%, rgba(210, 210, 210, 0.03) 74%,rgba(61, 61, 61, 0.03) 74%, rgba(61, 61, 61, 0.03) 100%),linear-gradient(22deg, rgba(201, 201, 201, 0.03) 0%, rgba(201, 201, 201, 0.03) 5%,rgba(89, 89, 89, 0.03) 5%, rgba(89, 89, 89, 0.03) 6%,rgba(100, 100, 100, 0.03) 6%, rgba(100, 100, 100, 0.03) 18%,rgba(172, 172, 172, 0.03) 18%, rgba(172, 172, 172, 0.03) 52%,rgba(186,213,244, 0.14901960784313725) 52%, rgba(186,213,244, 0.14901960784313725) 85%,rgba(240, 240, 240, 0.03) 85%, rgba(240, 240, 240, 0.03) 89%,rgba(186,213,244, 0.14901960784313725) 89%, rgba(186,213,244, 0.14901960784313725) 100%),linear-gradient(283deg, rgba(186,213,244, 0.14901960784313725) 0%, rgba(186,213,244, 0.14901960784313725) 10%,rgba(194,194,194, 0.03137254901960784) 10%, rgba(194,194,194, 0.03137254901960784) 34%,rgba(186,213,244, 0.14901960784313725) 34%, rgba(186,213,244, 0.14901960784313725) 36%,rgba(177, 177, 177, 0.03) 36%, rgba(177, 177, 177, 0.03) 46%,rgba(180, 180, 180, 0.03) 46%, rgba(180, 180, 180, 0.03) 59%,rgba(89, 89, 89, 0.03) 59%, rgba(89, 89, 89, 0.03) 80%,rgba(217, 217, 217, 0.03) 80%, rgba(217, 217, 217, 0.03) 100%),linear-gradient(342deg, rgba(171, 171, 171, 0.03) 0%, rgba(171, 171, 171, 0.03) 22%,rgba(238, 238, 238, 0.03) 22%, rgba(238, 238, 238, 0.03) 37%,rgba(186, 186, 186, 0.03) 37%, rgba(186, 186, 186, 0.03) 65%,rgba(80, 80, 80, 0.03) 65%, rgba(80, 80, 80, 0.03) 68%,rgba(49, 49, 49, 0.03) 68%, rgba(49, 49, 49, 0.03) 71%,rgba(137, 137, 137, 0.03) 71%, rgba(137, 137, 137, 0.03) 88%,rgba(224, 224, 224, 0.03) 88%, rgba(224, 224, 224, 0.03) 100%),linear-gradient(90deg, rgb(216,240,255),rgb(208,229,241));
     text-align: center;
-    position:fixed;
-    top:0;
-    left:0;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
 }
-.logo{
+
+.main__header__logo{
     width: auto;
     display: none;
-    margin: 0 10px;
+    margin: 0 1vw;
     display: inline-block;
     float: left;
 }
 
-.logo img{
-    width:100px;
-    height:100px;
+.main__header__logo__image{
+    width: 10vh;
+    height: 10vh;
 }
-.header h1{
+
+.main__header__title{
   text-align: center;
   margin: 0 auto;
   float: left;
-  padding: 30px 20px;
+  padding: 3vh 2vw;
 }
-.wrapper{
+
+.main-section {
+    text-align: center;
     display: block;
     width:100%;
-    text-align: center;
     padding-top: 150px;
+    font-size: 16px;
 }
 
-.is-dragover {
-    background-color: grey !important;
-}
-
-.drop_file_zone {
+.main-section__user-input__form__drop-zone {
     background-color: #eee;
-    width: 70%;
-    height: 250px;
-    margin: 20px auto;
+    width: 25vh;
+    height: 25vh;
+    margin: 2vh auto;
     position: relative;
 }
 
-.guide{
+.main-section__user-input__form__drop-zone__guide{
     position: absolute;
+    margin: 0;
     top:50%;
     left:50%;
     font-size: 25px;
     transform: translate(-50%,-50%);
 }
 
-.box_file {
-    width: 0.1px;
-    height: 0.1px;
+.main-section__user-input__form__drop-zone__guide{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%,-50%);
+}
+
+.main-section__form__input {
+    width: 0.1vw;
+    height: 0.1vh;
     opacity: 0;
     overflow: hidden;
     position: absolute;
     z-index: -1;
 }
-.filelabel, .execute, .save, .select, .btn{
+
+.main-section__user-input__info__label__svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+.main-section__user-input__info__execute, .result__container__save-btn{
+    margin: 35px auto 0 auto;
+    display:block;
+    border: 0;
+    outline: 0;
+}
+
+.btn{
     color: #fff;
     background-color: #8DC3E2;
-    font-size: 30px;
+    font-size: 1.7rem;
     font-weight: 700;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -85,24 +108,14 @@ body{
     border-radius: 5px;
 }
 
-.filelabel:hover, .execute:hover, .save:hover, .select:hover , .btn:hover{
+.btn:hover{
     background-color: #73B6DC;
 }
-.filelabel svg {
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    fill: currentColor;
-    margin-top: -0.25em;
-    margin-right: 0.25em;
+
+.is-dragover {
+    background-color: rgba(0,0,0,0.8) !important;
 }
 
-.execute, .save{
-    margin: 35px auto 0 auto;
-    display:block;
-    border: 0;
-    outline: 0;
-}
 .result{
   display: block;
   width:100%;
@@ -159,18 +172,17 @@ body{
      border-radius: 5px;
 }
 
-/* The Modal (background) */
 .modal {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal Content/Box */
@@ -208,13 +220,13 @@ body{
 
 
 @media screen and (min-width: 1000px) {
-    .wrapper{
+    .main-section{
         display: flex;
         justify-content: center;
         align-items: center;
 
     }
-    .guide {
+    .main-section__user-input__form__drop-zone__guide {
       visibility: visible;
     }
     .drop_file_zone {
@@ -261,19 +273,20 @@ body{
      display: none;
    }
 }
+
 @media screen and (max-width: 550px) {
-    .logo{
+    .main__header__logo{
       display: none;
     }
-    .header h1{
+    .main__header__title{
       font-size: 33px;
       width: 100%;
       margin: 0 auto;
     }
-    .wrapper{
+    .main-section{
       padding-top: 120px;
     }
-    .guide {
+    .main-section__user-input__form__drop-zone__guide {
         visibility: hidden;
     }
     .inputfile + label{

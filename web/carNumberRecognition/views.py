@@ -9,11 +9,9 @@ from .deeplearning import *
 from django.views.decorators.csrf import csrf_exempt
 import json
 
-# Create your views here.
-
 def index(request):
     form = CarForm()
-    return render(request, 'recognition/index.html', {'form' : form,'resultOD':[],'flag':True})
+    return render(request, 'index.html', {'form' : form,'resultOD':[],'flag':True})
 
 @csrf_exempt
 def object_detection(request):
@@ -43,5 +41,5 @@ def recognition(request):
     return HttpResponse(json.dumps({'resultRN':recimage, 'resultText':license_plate}), content_type="application/json")
 
 
-tfnet1 = Object_Detection()
-tfnet2 = Recognition()
+#tfnet1 = Object_Detection()
+#tfnet2 = Recognition()
